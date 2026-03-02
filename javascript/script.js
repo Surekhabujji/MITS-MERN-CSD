@@ -250,57 +250,121 @@ for(let key in obj){
     console.log(key,obj[key]);
 }
 
-//for...of
-var arr=[10,20,30,40];
-for(let val of arr){
-    console.log(val);
+// //for...of
+// var arr=[10,20,30,40];
+// for(let val of arr){
+//     console.log(val);
+// }
+// //forEach is a callbackfunction
+// arr.forEach((val,index)=>{
+//     console.log(val,index);
+// })
+
+// var arr1=[1,2,3,4,5];
+// //Map to return a new array
+// var double=arr1.map((val)=>(val*2));
+// console.log(double); 
+
+// //Filter according to condition
+// var even=arr1.filter((val)=>(val%2===0));
+// console.log(even);
+
+// //reducer 
+// var total=arr1.reduce((sum,val)=>(sum+val),0);
+// console.log(total);
+
+// var r=arr1.map((val)=>val**2).filter((val)=>val%2===0).reduce((sum,val)=>(sum+val),0);
+// console.log(r);
+
+// //Hoisting 
+// //var a
+// console.log(a);
+// var a=10;
+// // For let and const hoisting not possible
+// add();//function hoisting
+// function add(){
+//     console.log(10+20);
+// }
+
+// //Scope 
+
+// //Global scope
+// var a=20;
+// if(true){
+//     var b=10;//block scope
+// }
+// console.log(a);
+// console.log(b);
+
+// //block scope 
+// //let
+// const i=10;
+// if(true){
+//     const j=20;
+// }
+// console.log(i);
+// console.log(j);
+
+//Promise
+// const promise=new Promise((resolve,reject)=>{
+//     var success=true;
+//     if(success){
+//         resolve("Task completed");
+//     }
+//     else{
+//         reject("Task not completed");
+//     }
+// })
+// promise.then((message)=>{
+//     console.log(message);
+// }).catch((err)=>{
+//     console.log(err);
+// })
+
+//setTimeout
+// const promise=new Promise((resolve,reject)=>{
+//     var success=true;
+//     if(success){
+//         setTimeout(()=>{
+//             resolve("Task completed");
+//         },2000);
+//     }
+//     else{
+//         reject("Task not completed");
+//     }
+// })
+// promise.then((msg)=>console.log(msg))
+// .catch((err)=>console.log(err));
+
+//setInterval
+
+// var count=1;
+// const Intervalcount=setInterval(()=>{
+//     console.log(count);
+//     count++;
+//     if(count>5){
+//         clearInterval(Intervalcount)
+//     }
+// },2000);
+
+//fetch 
+
+// const getData=()=>{
+//     return fetch("https://jsonplaceholder.typicode.com/users")
+// }
+// getData().then((res)=>res.json())
+// .then((data)=>console.log(data))
+// .catch((err)=>console.log(err));
+
+//Async and await
+const getData=async()=>{
+    try{
+        const res=await fetch("https://jsonplaceholder.typicode.com/users");
+        const data=await res.json();
+        console.log(data);
+
+    }catch(err){
+        console.log(err)
+    }
 }
-//forEach is a callbackfunction
-arr.forEach((val,index)=>{
-    console.log(val,index);
-})
-
-var arr1=[1,2,3,4,5];
-//Map to return a new array
-var double=arr1.map((val)=>(val*2));
-console.log(double); 
-
-//Filter according to condition
-var even=arr1.filter((val)=>(val%2===0));
-console.log(even);
-
-//reducer 
-var total=arr1.reduce((sum,val)=>(sum+val),0);
-console.log(total);
-
-var r=arr1.map((val)=>val**2).filter((val)=>val%2===0).reduce((sum,val)=>(sum+val),0);
-console.log(r);
-
-//Hoisting 
-//var a
-console.log(a);
-var a=10;
-// For let and const hoisting not possible
-add();//function hoisting
-function add(){
-    console.log(10+20);
-}
-
-//Scope 
-
-//Global scope
-var a=20;
-if(true){
-    var b=10;//block scope
-}
-console.log(a);
-console.log(b);
-
-//block scope 
-//let
-const i=10;
-if(true){
-    const j=20;
-}
-console.log(i);
-console.log(j);
+getData();
