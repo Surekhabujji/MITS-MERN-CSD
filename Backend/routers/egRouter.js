@@ -3,8 +3,8 @@ const { getController, putController, postController, deleteController } = requi
 
 const egRouters =express.Router();
 egRouters.get('/',getController)
-egRouters.get('/',postController)
-egRouters.get('/',putController)
-egRouters.get('/',deleteController)
+egRouters.post('/',postController)
+egRouters.put('/',putController)
+egRouters.delete('/',deleteController)
 
 module.exports=egRouters;
